@@ -50,7 +50,7 @@ export const UserCardHeader = () => {
               '& > div': { flex: 1 },
               paddingTop: 0,
               paddingBottom: 0,
-              background:'#e3f2fd'
+              background:'#f8f8f8'
             }}
           >
               <div className="posItem">

@@ -40,7 +40,8 @@ export const UserCard = ({user}) => {
         <CardContent>
           <Sheet
             sx={{
-              bgcolor: 'background.level1',
+              /*bgcolor: 'background.level1',*/
+              bgcolor: '#fbfbfb',
               borderRadius: 'sm',
               p: 1.5,
               my: 1.5,
