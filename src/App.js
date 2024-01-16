@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import Leaderboard from './components/Leaderboard';
+import { AppBar } from '@mui/material';
+import { Container } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container maxWidth="lg">
+      <h2>Leaderboard</h2>
+    <Leaderboard />
+    </Container>
+    </>
   );
 }
 
