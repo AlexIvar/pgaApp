@@ -7,10 +7,21 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import UserCard from './UserCard';
+import UserCardHeader from './userCardHeader';
 
 export const leaderboard = () => {
   return (
     <div>
+      
+      <Accordion expanded={false} sx={{padding: 0}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+           <UserCardHeader />
+        </AccordionSummary>
+      </Accordion>
       <Accordion sx={{padding: 0}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

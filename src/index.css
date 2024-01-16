@@ -15,3 +15,18 @@ code {
 .MuiAccordionSummary-content{
   margin: 0px !important;
 }
+
+.posItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posItem2{
+  display: flex;
+  align-items: center;
+}
+
+.MuiAspectRatio-content{
+  background-color: inherit !important;
+}

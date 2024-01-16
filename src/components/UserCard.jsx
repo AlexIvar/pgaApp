@@ -22,9 +22,7 @@ export const UserCard = () => {
           display: 'block',
           width: '1px',
           bgcolor: 'white',
-          left: '500px',
-          top: '-24px',
-          bottom: '-24px',
+          left: '500px'
         
         }}
       />
@@ -60,6 +58,9 @@ export const UserCard = () => {
               '& > div': { flex: 1 },
             }}
           >
+              <div className="posItem">
+              <Typography flevel="body-xs" fontWeight="lg" textColor="text.tertiary">1</Typography>
+              </div>
         <AspectRatio  ratio="1"
         variant="outlined"
         sx={{ minWidth: 50, maxWidth: 50, borderRadius: 'sm' }}>
@@ -76,41 +77,23 @@ export const UserCard = () => {
               </Typography>
               <Typography flevel="body-xs" fontWeight="xs" textColor="text.tertiary">Ivarsson</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                Total
-              </Typography>
-              <Typography fontWeight="lg">34</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">34</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                R1
-              </Typography>
-              <Typography fontWeight="lg">98</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">98</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                R2
-              </Typography>
-              <Typography fontWeight="lg">89</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                R3
-              </Typography>
-              <Typography fontWeight="lg">89</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                R4
-              </Typography>
-              <Typography fontWeight="lg">89</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
             </div>
-            <div>
-              <Typography level="body-xs" fontWeight="lg">
-                Strokes
-              </Typography>
-              <Typography fontWeight="lg">89</Typography>
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
             </div>
           </Sheet>
         {/*  <Box sx={{ display: 'flex', gap: 1.5, '& > button': { flex: 1 } }}>
