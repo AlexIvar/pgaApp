@@ -7,7 +7,7 @@ import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 
-export const UserCard = () => {
+export const UserCard = ({user}) => {
   return (
     <Box
       sx={{
@@ -37,14 +37,6 @@ export const UserCard = () => {
           background: 'white'
         }}
       >
-       {/* <AspectRatio flex ratio="1" maxHeight={182} sx={{ minWidth: 100 }}>
-          <img
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-            srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
-            loading="lazy"
-            alt=""
-          />
-        </AspectRatio>*/}
         <CardContent>
           <Sheet
             sx={{
@@ -59,7 +51,9 @@ export const UserCard = () => {
             }}
           >
               <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg" textColor="text.tertiary">1</Typography>
+              <Typography flevel="body-xs" fontWeight="lg" textColor="text.tertiary">
+                {user.position}
+              </Typography>
               </div>
         <AspectRatio  ratio="1"
         variant="outlined"
@@ -73,37 +67,32 @@ export const UserCard = () => {
         </AspectRatio>
         <div>
               <Typography flevel="body-sm" fontWeight="lg">
-                Alex
+                {user.firstname}
               </Typography>
-              <Typography flevel="body-xs" fontWeight="xs" textColor="text.tertiary">Ivarsson</Typography>
+              <Typography flevel="body-xs" fontWeight="xs" textColor="text.tertiary">
+                {user.lastname}  
+              </Typography>
+            </div>
+           
+            <div className="posItem">
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>98</Typography>
             </div>
             <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">34</Typography>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
             <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">98</Typography>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
             <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
             <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
+              <Typography fontWeight="lg" textColor="text.tertiary">{user.totalScore}</Typography>
             </div>
             <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
-            </div>
-            <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary">89</Typography>
+              <Typography fontWeight="lg" textColor="text.tertiary">{user.strokes}</Typography>
             </div>
           </Sheet>
-        {/*  <Box sx={{ display: 'flex', gap: 1.5, '& > button': { flex: 1 } }}>
-            <Button variant="outlined" color="neutral">
-              Chat
-            </Button>
-            <Button variant="solid" color="primary">
-              Follow
-            </Button>
-          </Box> */}
         </CardContent>
       </Card>
     </Box>

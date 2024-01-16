@@ -66,20 +66,20 @@ export const UserCardHeader = () => {
               </Typography>
               <Typography flevel="body-xs" fontWeight="xs" textColor="text.tertiary"></Typography>
             </div>
-            <div className="posItem">
+              <div className="posItem">
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R1</Typography>
+              </div>
+              <div className="posItem">
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R2</Typography>
+              </div>
+              <div className="posItem">
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R3</Typography>
+              </div>
+              <div className="posItem">
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R4</Typography>
+              </div>
+              <div className="posItem">
               <Typography flevel="body-xs" fontWeight="lg">Total</Typography>
-              </div>
-              <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg">R1</Typography>
-              </div>
-              <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg">R2</Typography>
-              </div>
-              <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg">R3</Typography>
-              </div>
-              <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg">R4</Typography>
               </div>
               <div className="posItem">
               <Typography flevel="body-xs" fontWeight="lg">Strokes</Typography>
