@@ -6,6 +6,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Table } from '@mui/material';
+import Chip from '@mui/material/Chip';
 
 const AntTabs = styled(Tabs)({
   borderBottom: '1px solid #e8e8e8',
@@ -48,6 +49,51 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
   },
 }));
 
+const AntTabs2 = styled(Tabs)({
+  borderBottom: '1px solid #e8e8e8',
+  '& .MuiTabs-indicator': {
+    backgroundColor: '#1890ff',
+  },
+});
+
+const AntTab2 = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
+  textTransform: 'none',
+  minWidth: 0,
+  [theme.breakpoints.up('sm')]: {
+    minWidth: 0,
+  },
+  fontWeight: theme.typography.fontWeightRegular,
+  /*marginRight: theme.spacing(1),*/
+  color: 'rgba(0, 0, 0, 0.85)',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+  '&:hover': {
+    color: '#40a9ff',
+    opacity: 1,
+  },
+  '&.Mui-selected': {
+    color: '#1890ff',
+    fontWeight: theme.typography.fontWeightMedium,
+  },
+  '&.Mui-focusVisible': {
+    backgroundColor: '#d1eaff',
+  },
+}));
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+ padding:"10px"
+}));
+
 
 const userRounds = [{
                     "userId": 1, 
@@ -61,15 +107,15 @@ const userRounds = [{
                     "hole7": 1,
                     "hole8": 1,
                     "hole9": 1,
-                    "hole10": 1,
-                    "hole11": 1,
-                    "hole12": 1,
-                    "hole13": 1,
-                    "hole14": 1,
-                    "hole15": 1,
-                    "hole16": 1,
-                    "hole17": 1,
-                    "hole18": 1,
+                    "hole10": 2,
+                    "hole11": 2,
+                    "hole12": 2,
+                    "hole13": 2,
+                    "hole14": 2,
+                    "hole15": 2,
+                    "hole16": 2,
+                    "hole17": 2,
+                    "hole18": 2,
                     },
                     {
                       "userId": 1, 
@@ -83,15 +129,15 @@ const userRounds = [{
                       "hole7": 2,
                       "hole8": 2,
                       "hole9": 2,
-                      "hole10": 2,
-                      "hole11": 2,
-                      "hole12": 2,
-                      "hole13": 2,
-                      "hole14": 2,
-                      "hole15": 2,
-                      "hole16": 2,
-                      "hole17": 2,
-                      "hole18": 2,
+                      "hole10": 3,
+                      "hole11": 3,
+                      "hole12": 3,
+                      "hole13": 3,
+                      "hole14": 3,
+                      "hole15": 3,
+                      "hole16": 3,
+                      "hole17": 3,
+                      "hole18": 3,
                     },
                     {
                       "userId": 1, 
@@ -105,15 +151,15 @@ const userRounds = [{
                       "hole7": 3,
                       "hole8": 3,
                       "hole9": 3,
-                      "hole10": 3,
-                      "hole11": 3,
-                      "hole12": 3,
-                      "hole13": 3,
-                      "hole14": 3,
-                      "hole15": 3,
-                      "hole16": 3,
-                      "hole17": 3,
-                      "hole18": 3,
+                      "hole10": 4,
+                      "hole11": 4,
+                      "hole12": 4,
+                      "hole13": 4,
+                      "hole14": 4,
+                      "hole15": 4,
+                      "hole16": 4,
+                      "hole17": 4,
+                      "hole18": 4,
                     },
                     {
                       "userId": 1, 
@@ -127,15 +173,15 @@ const userRounds = [{
                       "hole7": 4,
                       "hole8": 4,
                       "hole9": 4,
-                      "hole10": 4,
-                      "hole11": 4,
-                      "hole12": 4,
-                      "hole13": 4,
-                      "hole14": 4,
-                      "hole15": 4,
-                      "hole16": 4,
-                      "hole17": 4,
-                      "hole18": 4,
+                      "hole10": 5,
+                      "hole11": 5,
+                      "hole12": 5,
+                      "hole13": 5,
+                      "hole14": 5,
+                      "hole15": 5,
+                      "hole16": 5,
+                      "hole17": 5,
+                      "hole18": 5,
                     }
                   ];
 
@@ -144,6 +190,7 @@ const userRounds = [{
 
 export const RoundTable = () => {
   const [value, setValue] = React.useState(0);
+  const [valuetest, setValueTest] = React.useState(0);
   const [currRound, setCurrRound] = React.useState(userRounds.find((element) => element.roundId === 0));
 
 
@@ -151,6 +198,11 @@ export const RoundTable = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     setCurrRound(userRounds.find((element) => element.roundId === newValue))
+  };
+
+  const handleChangeTest = (event, newValue) => {
+    setValueTest(newValue);
+    console.log(newValue)
   };
 
   return (
@@ -163,86 +215,166 @@ export const RoundTable = () => {
           <AntTab label="Round 3" />
           <AntTab label="Round 4" />
         </AntTabs>
+        <AntTabs2 variant="fullWidth" value={valuetest} onChange={handleChangeTest} aria-label="ant example" sx={{  display: { sm: '', md: '', lg: 'none' }}}>
+          <AntTab2 label="First 9"/>
+          <AntTab2 label="Last 9"/>
+        </AntTabs2>
         <Box sx={{ p: 3 }}>
-          <Table sx={{width: "100%"}}>
-        <TableRow key={1}>
-                      <TableCell component="th" scope="row">
-                        <b>{"Hole"}</b>
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                      {"|"}
-                    </TableCell>
-                      <TableCell align="right">{1}</TableCell>
-                      <TableCell align="right">{2}</TableCell>
-                      <TableCell align="right">{3}</TableCell>
-                      <TableCell align="right">{4}</TableCell>
-                      <TableCell align="right">{5}</TableCell>
-                      <TableCell align="right">{6}</TableCell>
-                      <TableCell align="right">{7}</TableCell>
-                      <TableCell align="right">{8}</TableCell>
-                      <TableCell align="right">{9}</TableCell>
-                      <TableCell align="right">{10}</TableCell>
-                      <TableCell align="right">{11}</TableCell>
-                      <TableCell align="right">{12}</TableCell>
-                      <TableCell align="right">{13}</TableCell>
-                      <TableCell align="right">{14}</TableCell>
-                      <TableCell align="right">{15}</TableCell>
-                      <TableCell align="right">{16}</TableCell>
-                      <TableCell align="right">{17}</TableCell>
-                      <TableCell align="right">{18}</TableCell>
-                    </TableRow>
-                     <TableRow key={1}>
-                     <TableCell component="th" scope="row">
-                       <b>{"Par"}</b>
-                     </TableCell>
-                     <TableCell component="th" scope="row">
-                      {"|"}
-                    </TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{3}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{3}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                     <TableCell align="right">{4}</TableCell>
-                   </TableRow>
-                    <TableRow key={1}>
-                    <TableCell component="th" scope="row">
-                      <b>{"Score"}</b>
-                    </TableCell>
-                    <TableCell component="th" scope="row">
-                      {"|"}
-                    </TableCell>
-                    <TableCell align="right">{currRound.hole1}</TableCell>
-                    <TableCell align="right">{currRound.hole2}</TableCell>
-                    <TableCell align="right">{currRound.hole3}</TableCell>
-                    <TableCell align="right">{currRound.hole4}</TableCell>
-                    <TableCell align="right">{currRound.hole5}</TableCell>
-                    <TableCell align="right">{currRound.hole6}</TableCell>
-                    <TableCell align="right">{currRound.hole7}</TableCell>
-                    <TableCell align="right">{currRound.hole8}</TableCell>
-                    <TableCell align="right">{currRound.hole9}</TableCell>
-                    <TableCell align="right">{currRound.hole10}</TableCell>
-                    <TableCell align="right">{currRound.hole11}</TableCell>
-                    <TableCell align="right">{currRound.hole12}</TableCell>
-                    <TableCell align="right">{currRound.hole13}</TableCell>
-                    <TableCell align="right">{currRound.hole14}</TableCell>
-                    <TableCell align="right">{currRound.hole15}</TableCell>
-                    <TableCell align="right">{currRound.hole16}</TableCell>
-                    <TableCell align="right">{currRound.hole17}</TableCell>
-                    <TableCell align="right">{currRound.hole18}</TableCell>
+          <Table sx={{width: "100%", display: { xs: 'none', lg: 'block', xl: 'block' }}}>
+              <TableRow key={1}>
+                            <TableCell component="th" scope="row">
+                              <b>{"Hole"}</b>
+                            </TableCell>
+                            <TableCell component="th" scope="row">
+                            {"|"}
+                          </TableCell>
+                            <TableCell align="center">{1}</TableCell>
+                            <TableCell align="center">{2}</TableCell>
+                            <TableCell align="center">{3}</TableCell>
+                            <TableCell align="center">{4}</TableCell>
+                            <TableCell align="center">{5}</TableCell>
+                            <TableCell align="center">{6}</TableCell>
+                            <TableCell align="center">{7}</TableCell>
+                            <TableCell align="center">{8}</TableCell>
+                            <TableCell align="center">{9}</TableCell>
+                            <TableCell align="center">{10}</TableCell>
+                            <TableCell align="center">{11}</TableCell>
+                            <TableCell align="center">{12}</TableCell>
+                            <TableCell align="center">{13}</TableCell>
+                            <TableCell align="center">{14}</TableCell>
+                            <TableCell align="center">{15}</TableCell>
+                            <TableCell align="center">{16}</TableCell>
+                            <TableCell align="center">{17}</TableCell>
+                            <TableCell align="center">{18}</TableCell>
                   </TableRow>
+                  <TableRow key={1}>
+                          <TableCell component="th" scope="row">
+                            <b>{"Par"}</b>
+                          </TableCell>
+                          <TableCell component="th" scope="row">
+                            {"|"}
+                          </TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{3}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{3}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align="center">{4}</TableCell>
+                          <TableCell align='center'>{4}</TableCell>
+                    </TableRow>
+                    <TableRow key={1} >
+                          <TableCell component="th" scope="row">
+                            <b>{"Score"}</b>
+                          </TableCell>
+                          <TableCell component="th" scope="row">
+                            {"|"}
+                          </TableCell>
+                          <TableCell align="right">{currRound.hole15}</TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell align="right">{5}</TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small" label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip size="small"label={currRound.hole18} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip color="success" size="small" label={-4} variant="outlined" sx={{padding:0}}/></TableCell>
+                          <TableCell><Chip color="success" size="small" label={-2} variant="hidden" sx={{padding:0}}/></TableCell>
+                    </TableRow>
+                  </Table>
+               {/*Smaller table*/}  
+                  <Table sx={{width: "100%", display: { sm: '', md: '', lg: 'none' }}}>
+              <TableRow key={1}>
+                            <StyledTableCell component="th" scope="row">
+                              <b>{"Hole"}</b>
+                            </StyledTableCell>
+                            <StyledTableCell component="th" scope="row">
+                            {"|"}
+                          </StyledTableCell>
+                            <StyledTableCell align="center">{1}</StyledTableCell>
+                            <StyledTableCell align="center">{2}</StyledTableCell>
+                            <StyledTableCell align="center">{3}</StyledTableCell>
+                            <StyledTableCell align="center">{4}</StyledTableCell>
+                            <StyledTableCell align="center">{5}</StyledTableCell>
+                            <StyledTableCell align="center">{6}</StyledTableCell>
+                            <StyledTableCell align="center">{7}</StyledTableCell>
+                            <StyledTableCell align="center">{8}</StyledTableCell>
+                            <StyledTableCell align="center">{9}</StyledTableCell>
+                           
+                  </TableRow>
+                  <TableRow key={1}>
+                          <StyledTableCell component="th" scope="row">
+                            <b>{"Par"}</b>
+                          </StyledTableCell>
+                          <StyledTableCell component="th" scope="row">
+                            {"|"}
+                          </StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{3}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                          <StyledTableCell align="center">{3}</StyledTableCell>
+                          <StyledTableCell align="center">{4}</StyledTableCell>
+                         
+                    </TableRow>
+                    {valuetest === 0 && 
+                      <TableRow key={1} >
+                      <StyledTableCell component="th" scope="row">
+                        <b>{"Score"}</b>
+                      </StyledTableCell>
+                      <StyledTableCell component="th" scope="row">
+                        {"|"}
+                      </StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole1} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole2} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole3} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center" >{currRound.hole4}</StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole5} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole6} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole7} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole8} variant="outlined" sx={{padding:0}}/></StyledTableCell> <StyledTableCell align="center">{currRound.hole9}</StyledTableCell>
+                      </TableRow>
+                    }
+                    {valuetest === 1 && 
+                      <TableRow key={1} >
+                      <StyledTableCell component="th" scope="row">
+                        <b>{"Score"}</b>
+                      </StyledTableCell>
+                      <StyledTableCell component="th" scope="row">
+                        {"|"}
+                      </StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole10} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole11} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole12} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center" >{currRound.hole13}</StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole14} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole15} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole16} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center"><Chip size="small" label={currRound.hole17} variant="outlined" sx={{padding:0}}/></StyledTableCell>
+                      <StyledTableCell align="center">{currRound.hole18}</StyledTableCell>
+                      </TableRow>
+                    }
                   </Table>
       </Box>
       </Box>

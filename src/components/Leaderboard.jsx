@@ -13,32 +13,36 @@ import RoundTable from './RoundTable';
 
 const test = [
   {
-    "firstname" : "alex",
-    "lastname" : "ivarsson",
+    "firstname" : "Lexi",
+    "lastname" : "Blaze",
     "position": 1,
     "totalScore": 50,
-    "strokes": 60
+    "strokes": 60,
+    "userImage": "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250"
   },
   {
-    "firstname" : "andri",
+    "firstname" : "Andri",
     "lastname" : "golfman",
     "position": 2,
     "totalScore": 30,
-    "strokes": 40
+    "strokes": 40,
+    "userImage": "https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk"
   },
   {
-    "firstname" : "palmi",
+    "firstname" : "Pálmi",
     "lastname" : "springer",
     "position": 3,
     "totalScore": 50,
-    "strokes": 60
+    "strokes": 60,
+    "userImage": "https://placebeard.it/250/250"
   },
   {
     "firstname" : "Biggi boy",
     "lastname" : "Choco",
     "position": 4,
     "totalScore": 50,
-    "strokes": 60
+    "strokes": 60,
+    "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
   }
 ];
 
