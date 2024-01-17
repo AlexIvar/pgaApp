@@ -13,7 +13,7 @@ export const UserCard = ({user}) => {
       sx={{
         width: '100%',
         position: 'relative',
-        overflow: { xs: 'auto', sm: 'initial' },
+        overflow: { xs: 'initial', sm: 'initial' },
       }}
     >
       <Box
@@ -32,7 +32,7 @@ export const UserCard = ({user}) => {
           width: '100%',
           flexWrap: 'wrap',
           // make the card resizable for demo
-          overflow: 'auto',
+          overflow: 'inital',
           border: 'none',
           background: 'white'
         }}
@@ -75,17 +75,17 @@ export const UserCard = ({user}) => {
               </Typography>
             </div>
            
-            <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>98</Typography>
+            <div className="posItem" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>98</Typography>
             </div>
-            <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
+            <div className="posItem" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
-            <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
+            <div className="posItem" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
-            <div className="posItem">
-              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>89</Typography>
+            <div className="posItem" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+              <Typography fontWeight="lg" textColor="text.tertiary" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>89</Typography>
             </div>
             <div className="posItem">
               <Typography fontWeight="lg" textColor="text.tertiary">{user.totalScore}</Typography>

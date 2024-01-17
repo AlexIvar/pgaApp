@@ -13,7 +13,7 @@ export const UserCardHeader = () => {
       sx={{
         width: '100%',
         position: 'relative',
-        overflow: { xs: 'auto', sm: 'initial' },
+        overflow: { xs: 'initial', sm: 'initial' },
       }}
     >
       <Box
@@ -67,16 +67,16 @@ export const UserCardHeader = () => {
               <Typography flevel="body-xs" fontWeight="xs" textColor="text.tertiary"></Typography>
             </div>
               <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R1</Typography>
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>R1</Typography>
               </div>
               <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R2</Typography>
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>R2</Typography>
               </div>
               <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R3</Typography>
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>R3</Typography>
               </div>
               <div className="posItem">
-              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'block', sm: 'none', md: 'block' } }}>R4</Typography>
+              <Typography flevel="body-xs" fontWeight="lg" sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>R4</Typography>
               </div>
               <div className="posItem">
               <Typography flevel="body-xs" fontWeight="lg">Total</Typography>
