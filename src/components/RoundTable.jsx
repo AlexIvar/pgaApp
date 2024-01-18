@@ -9,13 +9,14 @@ import { Table } from '@mui/material';
 import Chip from '@mui/material/Chip';
 
 const AntTabs = styled(Tabs)({
-  borderBottom: '1px solid #e8e8e8',
+  //borderBottom: '1px solid #e8e8e8',
   '& .MuiTabs-indicator': {
-    backgroundColor: '#1890ff',
+    //backgroundColor: '#1890ff',
+    backgroundColor: 'inherit',
   },
 });
 
-const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
+const AntTab = styled((props) => <Tab /*disableRipple*/ {...props} />)(({ theme }) => ({
   textTransform: 'none',
   minWidth: 0,
   [theme.breakpoints.up('sm')]: {
@@ -43,6 +44,9 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
   '&.Mui-selected': {
     color: '#1890ff',
     fontWeight: theme.typography.fontWeightMedium,
+    //border: "1px solid #1890ff",
+    borderRadius: "5%",
+    backgroundColor: "#e6f3ff"
   },
   '&.Mui-focusVisible': {
     backgroundColor: '#d1eaff',
@@ -158,8 +162,8 @@ const userRounds = [{
                       "hole14": 4,
                       "hole15": 4,
                       "hole16": 4,
-                      "hole17": 4,
-                      "hole18": 4,
+                      "hole17": 3,
+                      "hole18": 3,
                     },
                     {
                       "userId": 1, 
@@ -173,15 +177,15 @@ const userRounds = [{
                       "hole7": 4,
                       "hole8": 4,
                       "hole9": 4,
-                      "hole10": 5,
-                      "hole11": 5,
-                      "hole12": 5,
-                      "hole13": 5,
-                      "hole14": 5,
-                      "hole15": 5,
-                      "hole16": 5,
-                      "hole17": 5,
-                      "hole18": 5,
+                      "hole10": 4,
+                      "hole11": 4,
+                      "hole12": 4,
+                      "hole13": 4,
+                      "hole14": 4,
+                      "hole15": 4,
+                      "hole16": 4,
+                      "hole17": 4,
+                      "hole18": 4,
                     }
                   ];
 
@@ -209,7 +213,7 @@ export const RoundTable = () => {
     <>
         <Box sx={{ width: '100%' }}>
         <Box sx={{ bgcolor: '#fff' }}>
-        <AntTabs value={value} onChange={handleChange} aria-label="ant example" sx={{paddingLeft: 4}}>
+        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
           <AntTab label="Round 1" />
           <AntTab label="Round 2" />
           <AntTab label="Round 3" />
